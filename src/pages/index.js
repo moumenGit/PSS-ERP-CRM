@@ -3,9 +3,10 @@ import Homepage from "@/components/Homepage";
 
 export default function Home() {
   return (
-    <div className="">
-      <Layout />
-      <Homepage />
+    <div className="flex">
+      <Layout>
+        <Homepage />
+      </Layout>
     </div>
   );
 }

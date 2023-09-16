@@ -3,9 +3,9 @@ import React from "react";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="flex flex-col">
       <Navbar />
-      {children}
+        {children}
     </div>
   );
 }
