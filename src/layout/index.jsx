@@ -1,10 +1,12 @@
 import Navbar from "@/components/Navbar";
+import SidebarNavigation from "@/components/SidebarNavigation";
 import React from "react";
 
 export default function Layout({ children }) {
   return (
-    <div className="flex flex-col">
+    <div className="">
       <Navbar />
+       {/* <SidebarNavigation open={open}/> */}
         {children}
     </div>
   );

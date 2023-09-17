@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import {
-  AiOutlineHome,
+  // AiOutlineHome,
   AiOutlineClose,
   AiOutlineQuestionCircle,
   AiOutlineExclamationCircle,
 } from "react-icons/ai";
 import { GoNorthStar, GoPerson } from "react-icons/go";
-import { TbReportMoney } from "react-icons/tb";
+// import { TbReportMoney } from "react-icons/tb";
 import { TfiMenu } from "react-icons/tfi";
-import { GrUserAdmin } from "react-icons/gr";
+// import { GrUserAdmin } from "react-icons/gr";
 import { FaRegComment } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { GrLogout } from "react-icons/gr";
-import { MdPointOfSale } from "react-icons/md";
-import { BiPurchaseTagAlt } from "react-icons/bi";
+// import {MdPointOfSale} from 'react-icons/md'
+// import {BiPurchaseTagAlt} from "react-icons/bi"
 import { useRouter } from "next/router";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import Link from "next/link";
+import SidebarNavigation from "../SidebarNavigation";
 
 export default function Navbar() {
   // for open and clse sidebar navigation
@@ -32,18 +33,18 @@ export default function Navbar() {
   const pathName = router.pathname;
 
   // navbar data as an array of object
-  const navData = [
-    { name: "Home", path: "/", icon: <AiOutlineHome /> },
-    { name: "Sales", path: "/sales", icon: <MdPointOfSale /> },
-    { name: "Purchasing", path: "/purchasing", icon: <BiPurchaseTagAlt /> },
-    { name: "Finance", path: "/finance", icon: <TbReportMoney /> },
-    { name: "Inventory", path: "/inventory", icon: <GoNorthStar /> },
-    {
-      name: "Administration",
-      path: "/administration",
-      icon: <GrUserAdmin />,
-    },
-  ];
+  // const navData = [
+  //   { name: "Home", path: "/", icon: <AiOutlineHome /> },
+  //   { name: "Sales", path: "/sales", icon: <MdPointOfSale /> },
+  //   { name: "Purchasing", path: "/purchasing", icon:  <BiPurchaseTagAlt />},
+  //   { name: "Finance", path: "/finance", icon: <TbReportMoney /> },
+  //   { name: "Inventory", path: "/inventory", icon: <GoNorthStar /> },
+  //   {
+  //     name: "Administration",
+  //     path: "/administration",
+  //     icon: <GrUserAdmin />,
+  //   },
+  // ];
 
   // first droupdown menu
   const questionData = [
@@ -58,9 +59,9 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="">
+    <div className="flex flex-col ">
       {/* header section */}
-      <div className="border w-screen bg-[#f5f4f2] flex flex-row justify-between">
+      <div className="border w-screen bg-[#f5f4f2] flex flex-row justify-between fixeds">
         {/* left */}
         <div className="flex flex-row p-2 space-x-2">
           <div className="">
@@ -76,7 +77,7 @@ export default function Navbar() {
               />
             )}
           </div>
-          <h1>Name - any quote</h1>
+          <h1>ProERP/CRM - Where Business Grows</h1>
         </div>
 
         {/* right large screen */}
@@ -334,7 +335,8 @@ export default function Navbar() {
       </div>
 
       {/* sidebar navigation */}
-      <div
+      {/* <SidebarNavigation open={open} /> */}
+      {/* <div
         className={`bg-[#f5f4f2] h-screen pt-4 border relative duration-300 flex flex-col ${
           open ? "w-64 p-3" : "w-0"
         }`}
@@ -359,7 +361,7 @@ export default function Navbar() {
             </Link>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }
