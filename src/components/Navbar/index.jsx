@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  // AiOutlineHome,
   AiOutlineClose,
   AiOutlineQuestionCircle,
   AiOutlineExclamationCircle,
@@ -18,15 +17,17 @@ import { useRouter } from "next/router";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import Link from "next/link";
+import SalesMenu from "../Sales/SalesMenu";
 
 export default function Navbar() {
   // for open and clse sidebar navigation
   const [open, setOpen] = useState(false);
 
-  // for dropdown menu
+  // for dropdown menu in the header
   const [profilenav, setProfilenav] = useState(false);
   const [questionnav, setQuestionnav] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [dropdownSidebar, setDropdownSidebar] = useState(false);
 
   //  router to get the path
   const router = useRouter();
@@ -35,7 +36,13 @@ export default function Navbar() {
   // navbar data as an array of object
   const navData = [
     { name: "Home", path: "/", icon: <AiOutlineHome /> },
-    { name: "Sales", path: "/sales", icon: <MdPointOfSale /> },
+    {
+      name: "Sales",
+      path: "/sales",
+      icon: <MdPointOfSale />,
+      dropdownmenu: <SalesMenu dropdownSidebar={dropdownSidebar} />,
+      arrow: dropdownSidebar ? <IoMdArrowDropup /> : <IoMdArrowDropdown />,
+    },
     { name: "Purchasing", path: "/purchasing", icon: <BiPurchaseTagAlt /> },
     { name: "Finance", path: "/finance", icon: <TbReportMoney /> },
     { name: "Inventory", path: "/inventory", icon: <GoNorthStar /> },
@@ -46,13 +53,13 @@ export default function Navbar() {
     },
   ];
 
-  // first droupdown menu
+  // first droupdown menu in the header
   const questionData = [
     { name: "Help Page", path: "/", icon: <AiOutlineQuestionCircle /> },
     { name: "About Page", path: "/", icon: <AiOutlineExclamationCircle /> },
   ];
 
-  // second dropdown menu
+  // second dropdown menu in the header
   const profileData = [
     { name: "Settings", path: "/", icon: <FiSettings /> },
     { name: "Sign Out", path: "/", icon: <GrLogout /> },
@@ -60,11 +67,11 @@ export default function Navbar() {
 
   return (
     <div className="flex flex-col ">
-      {/* header section */}
+      {/* --------------------------------------header section--------------------------- */}
       <div className="border w-screen bg-[#f5f4f2] flex flex-row justify-between relative">
-        {/* left */}
+        {/* +++++++++++++++++++++++++++left large and small++++++++++++++++++++++++++++++++++++++++= */}
         <div className="flex flex-row p-2 space-x-2">
-          <div className="">
+          <div>
             {open ? (
               <AiOutlineClose
                 className="bg-zinc-100 text-3xl cursor-pointer p-1 border-2 rounded-md hover:bg-[#e4e3e0]"
@@ -80,7 +87,7 @@ export default function Navbar() {
           <h1>ProERP/CRM - Where Business Grows</h1>
         </div>
 
-        {/* right large screen */}
+        {/* +++++++++++++++++++++++++++++right large screen+++++++++++++++++++++++++++++++++++ */}
         <div className="md:flex flex-row justify-center items-center hidden">
           <div className="flex flex-row space-x-2 items-center m-[2px] hover:bg-[#e4e3e0] hover:border p-2 rounded-md">
             <FaRegComment />
@@ -198,7 +205,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* right small screen */}
+        {/* ++++++++++++++++++++++++++++++++right small screen+++++++++++++++++++++++++++++++++ */}
         <div className="flex flex-col justify-center items-center md:hidden">
           <div className="flex flex-row">
             <button
@@ -334,14 +341,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* sidebar navigation */}
-
+      {/* -----------------------------------------------sidebar navigation---------------------------------- */}
       <div
         className={`bg-[#f5f4f2] h-screen pt-4 border absolute duration-300 flex flex-col ${
           open ? "w-64 p-3" : "w-0"
         }`}
       >
-        <div className={`${open? 'block': 'hidden'} flex flex-row-reverse w-full mb-2`}>
+        <div
+          className={`${
+            open ? "block" : "hidden"
+          } flex flex-row-reverse w-full mb-1`}
+        >
           {open ? (
             <AiOutlineClose
               className="bg-zinc-100 text-3xl cursor-pointer p-1 border-2 rounded-md hover:bg-[#e4e3e0]"
@@ -354,26 +364,40 @@ export default function Navbar() {
             />
           )}
         </div>
-        {navData.map((link, index) => {
-          return (
-            <Link
-              href={link.path}
-              key={index}
-              className={`${
-                link.path === pathName && "bg-[#514c47] text-white rounded-md"
-              } m-[2px]`}
-            >
-              <i
-                className={`flex flex-row items-start gap-3 p-2 rounded-md  ${
-                  open ? "block" : "hidden"
-                } ${link.path === pathName ? "bg-none" : "hover:bg-[#e4e3e0]"}`}
-              >
-                {link.icon}
-                {link.name}
-              </i>
-            </Link>
-          );
-        })}
+
+        <div className="overflow-auto rounded">
+          {/* map through navbar data */}
+          {navData.map((link, index) => {
+            return (
+              <div key={index} className={`${open ? "block" : "hidden"}`}>
+                <Link
+                  href={link.path}
+                  className={`${
+                    link.path === pathName &&
+                    "bg-[#514c47] text-white rounded-md"
+                  } 
+                    m-[2px] flex flex-row justify-between  
+                    ${
+                      link.path === pathName ? "bg-none" : "hover:bg-[#e4e3e0]"
+                    } 
+                  rounded-md mb-1`}
+                  onClick={() => {
+                    setDropdownSidebar(!dropdownSidebar);
+                  }}
+                >
+                  <i className={`flex flex-row items-start gap-3 p-2`}>
+                    {link.icon}
+                    {link.name}
+                  </i>
+                  <div className="flex flex-col justify-center m-3">
+                    {link.arrow}
+                  </div>
+                </Link>
+                {link.dropdownmenu}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
