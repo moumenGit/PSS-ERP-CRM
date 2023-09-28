@@ -7,9 +7,9 @@ export default function SalesMenu({ dropdownSidebar }) {
   const salesData = [
     { name: "Manage Invoices", path: "/salesPages/managesales" },
     { name: "Create Invoice", path: "/" },
-    { name: "Manage Estimates", path: "/" },
+    { name: "Manage Estimates", path: "/salesPages/manageestimates" },
     { name: "Create Estimate", path: "/" },
-    { name: "Credit Notes", path: "/" },
+    { name: "Credit Notes", path: "/salesPages/creditnotes" },
     { name: "Refund Receipts", path: "/" },
     { name: "Recurring Invoices", path: "/" },
     { name: "Client Payments", path: "/" },

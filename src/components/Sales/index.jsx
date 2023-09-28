@@ -5,4 +5,3 @@ export default function Sales() {
     <div>Salessssssssssssssssssssssss</div>
   )
 }
-

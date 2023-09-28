@@ -4,8 +4,7 @@ import FieldComponent from "@/components/FieldComponent";
 import ButtonComponent from "@/components/ButtonComponent/ButtonComponent";
 import SortResult from "../SortResult";
 
-export default function ManageSales() {
-  const filterTable = ["All", "Overdue", "Unpaid", "Draft", "Overpaid"];
+export default function CreditNotes() {
   const [openAdvance, setOpenAdvance] = useState(false);
   return (
     <div className="flex space-y-5 bg-[#f6f9fc] flex-col p-2">
@@ -16,7 +15,7 @@ export default function ManageSales() {
         </div>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 place-items-center m-2">
           <FieldComponent
-            labelName="Contains Item"
+            labelName="Client"
             inputType="text"
             classNameLabel="text-[#437c94] font-medium"
             classNameInput="border border-[#ced4da] p-1 m-1"
@@ -56,26 +55,11 @@ export default function ManageSales() {
       {/* -----------------------------------------Result Table------------------------------------------ */}
       <div className="flex flex-col bg-white m-1 rounded w-full p-1">
         {/* ++++++++++++++++++++++++++++++filter-bar+++++++++++++++++++++++++++++ */}
-        <div className="flex sm:flex-row flex-col sm:justify-between items-center">
-          <div className="flex flex-row space-x-2">
-            <h1 className="p-1 font-serif">Results</h1>
-            <div className="flex flex-row space-x-2 border border-[#ced4da] bg-[#f6f9fc] ">
-              {filterTable &&
-                filterTable.map((item) => {
-                  return (
-                    <button className="hover:bg-[#ced4da] p-1 text-sm">
-                      {item}
-                    </button>
-                  );
-                })}
-            </div>
-          </div>
-          <SortResult />
+        <div className="flex flex-row space-x-2">
+          <h1 className="p-1 font-serif">Results</h1>
         </div>
         {/* ++++++++++++++++++++++++++++++table++++++++++++++++++++++++++++++++ */}
-        <div className="">
-
-        </div>
+        <div className=""></div>
       </div>
     </div>
   );

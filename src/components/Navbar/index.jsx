@@ -38,7 +38,7 @@ export default function Navbar() {
     { name: "Home", path: "/", icon: <AiOutlineHome /> },
     {
       name: "Sales",
-      path: "/sales",
+      path: "",
       icon: <MdPointOfSale />,
       dropdownmenu: <SalesMenu dropdownSidebar={dropdownSidebar} />,
       arrow: dropdownSidebar ? <IoMdArrowDropup /> : <IoMdArrowDropdown />,

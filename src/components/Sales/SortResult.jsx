@@ -49,7 +49,7 @@ export default function SortResult() {
           </div>
         </div>
       ) : (
-        <div></div>
+        <div className="hidden"></div>
       )}
     </div>
   );
