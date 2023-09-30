@@ -10,9 +10,9 @@ export default function SalesMenu({ dropdownSidebar }) {
     { name: "Manage Estimates", path: "/salesPages/manageestimates" },
     { name: "Create Estimate", path: "/" },
     { name: "Credit Notes", path: "/salesPages/creditnotes" },
-    { name: "Refund Receipts", path: "/" },
-    { name: "Recurring Invoices", path: "/" },
-    { name: "Client Payments", path: "/" },
+    { name: "Refund Receipts", path: "/salesPages/refundreceipts" },
+    { name: "Recurring Invoices", path: "/salesPages/recurringinvoices" },
+    { name: "Client Payments", path: "/salesPages/clientpayments" },
     { name: "Sales Settings", path: "/" },
   ];
 
