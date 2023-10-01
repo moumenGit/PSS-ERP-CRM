@@ -1,5 +1,5 @@
+import CalendarComponent from "@/components/CalendarComponent";
 import FieldComponent from "@/components/FieldComponent";
-import Selectcomponent from "@/components/Selectcomponent";
 import React from "react";
 
 export default function AdvancedItems({ openAdvance }) {
@@ -11,25 +11,7 @@ export default function AdvancedItems({ openAdvance }) {
     >
       {/* -------------------------------first part------------------------------------------- */}
       <div className="w-full space-y-2">
-        <div className="flex sm:flex-row flex-col items-end justify-center sm:space-x-1 space-y-1">
-          <Selectcomponent
-            name="Next Invoice Date"
-            values={["Custom", "Last Month", "Last Year"]}
-            classNameLabel="text-[#437c94] font-medium"
-            classNameStyle="border border-[#ced4da] p-1"
-          />
-          <div className="flex flex-row justify-center items-center space-x-1">
-            <FieldComponent
-              placeHolderName="From"
-              classNameInput="border border-[#ced4da] w-28 p-1"
-            />
-            <span className="font-bold"> - </span>
-            <FieldComponent
-              placeHolderName="To"
-              classNameInput="border border-[#ced4da] w-28 p-1"
-            />
-          </div>
-        </div>
+      <CalendarComponent calendarName="Next Invoice Date" />
       </div>
       {/* -----------------------------------------second part--------------------------------------- */}
       <div className="w-full space-y-2">

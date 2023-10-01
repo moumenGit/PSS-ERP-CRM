@@ -6,11 +6,13 @@ export default function Selectcomponent({
   classNameStyle = "",
   classNameLabel="",
   classNameDiv="",
+  firstOption="",
 }) {
   return (
     <div className={`flex flex-col w-full ${classNameDiv}`}>
       <label className={classNameLabel}>{name}</label>
-      <select className={classNameStyle}>
+      <select className={classNameStyle} name="">
+        {firstOption}
         {values &&
           values.map((value) => {
             return <option value={`${value}`} key={value}>{value}</option>;

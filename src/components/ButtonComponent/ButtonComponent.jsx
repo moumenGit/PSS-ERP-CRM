@@ -1,14 +1,14 @@
 import React from "react";
-import { FaSort } from "react-icons/fa";
 export default function ButtonComponent({
   buttonName,
   classNameButton,
   onClick,
   icon,
+  buttonType,
 }) {
   return (
     <div>
-      <button onClick={onClick} className={classNameButton}>
+      <button onClick={onClick} className={classNameButton} type={buttonType}>
         {buttonName}
         {icon}
       </button>
