@@ -7,10 +7,11 @@ export default function FieldComponent({
   classNameLabel = "",
   classNameDiv = "",
   placeHolderName = "",
-  pattern="",
+  flexType = "flex flex-col",
+  pattern = "",
 }) {
   return (
-    <div className={`flex flex-col w-full ${classNameDiv}`}>
+    <div className={`${flexType} w-full ${classNameDiv} `}>
       <label className={classNameLabel}>{labelName}</label>
       <input
         type={`${inputType}`}

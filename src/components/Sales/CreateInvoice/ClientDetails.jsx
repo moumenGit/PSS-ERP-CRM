@@ -36,8 +36,8 @@ export default function ClientDetails() {
   }, []);
 
   return (
-    <div className="p-2">
-      <div className="flex flex-col bg-[#f6f9fc] m-1 rounded w-full p-1 border border-[#ced4da] gap-2">
+    <div>
+      <div className="flex flex-col bg-[#f6f9fc] rounded w-full p-1 border border-[#ced4da]">
         <div>
           <h1 className="font-serif text-xl font-semibold m-2">Client Details</h1>
         </div>
@@ -178,10 +178,6 @@ export default function ClientDetails() {
           </div>
           {/* --------end of the form---------- */}
         </form>
-      </div>
-
-      <div>
-        
       </div>
     </div>
   );
