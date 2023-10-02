@@ -1,6 +1,7 @@
 import ButtonComponent from "@/components/ButtonComponent/ButtonComponent";
 import FieldComponent from "@/components/FieldComponent";
 import Selectcomponent from "@/components/Selectcomponent";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 export default function ClientDetails() {
@@ -38,8 +39,11 @@ export default function ClientDetails() {
   return (
     <div>
       <div className="flex flex-col bg-[#f6f9fc] rounded w-full p-1 border border-[#ced4da]">
-        <div>
-          <h1 className="font-serif text-xl font-semibold m-2">Client Details</h1>
+        <div className="flex flex-row justify-between">
+          <h1 className="font-serif text-xl font-semibold m-2">
+            Client Details
+          </h1>
+          <Link href={"/"} className="m-1 text-blue-500 font-medium underline">Advanced</Link>
         </div>
 
         {/* --------------client type using radio----------------- */}
@@ -107,7 +111,7 @@ export default function ClientDetails() {
             classNameInput="border border-[#ced4da] p-1 m-1"
           />
           {/* -------------------city, state & zip----------------------- */}
-          <div className="flex sm:flex-row flex-col space-x-1">
+          <div className="flex xl:flex-row flex-col space-x-1">
             <FieldComponent
               labelName="City"
               inputType="text"
