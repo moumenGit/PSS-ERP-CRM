@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/components/Variants";
 
 export default function SalesMenu({ dropdownSidebar }) {
-    // sales dropdown menu
+  // sales dropdown menu
   const salesData = [
     { name: "Manage Invoices", path: "/salesPages/managesales" },
     { name: "Create Invoice", path: "/salesPages/createdetails" },
@@ -20,9 +22,11 @@ export default function SalesMenu({ dropdownSidebar }) {
   const router = useRouter();
   const pathName = router.pathname;
   return (
-    <div className="m-1 mb-2 duration-500 shadow-inner transition-all drop-shadow-md">
+    <div
+      className="m-1 mb-2 shadow-inner "
+    >
       {dropdownSidebar ? (
-        <div className="bg-white flex flex-col items-center m-[2px] rounded">
+        <div className="bg-white flex flex-col items-center m-[2px] rounded transition-all delay-150 duration-700">
           {salesData.map((link, index) => {
             return (
               <div key={index} className="w-full">

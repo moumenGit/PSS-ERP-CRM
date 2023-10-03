@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import homepage1 from "../../../public/Images/homepage1.png";
 import { RiAdminLine } from "react-icons/ri";
+import { motion } from "framer-motion";
+import { fadeIn } from "../Variants";
 
 export default function Homepage() {
   //  router to get the path
@@ -50,10 +52,15 @@ export default function Homepage() {
 
   return (
     <div className="flex flex-col gap-2 items-center justify-center">
-
       {/* intro part */}
       <div className="flex md:flex-row flex-col-reverse mt-4 md:mt-0 items-center justify-center gap-2">
-        <div className="flex items-center leading-7 mb-3 md:mb-0">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="flex items-center leading-7 mb-3 md:mb-0"
+        >
           <h2 className="text-3xl m-3 text-center">
             Welcome to{" "}
             <span className="text-[#0f3775] font-semibold">ProERP/CRM!</span>{" "}
@@ -62,21 +69,32 @@ export default function Homepage() {
               Digital Transformation
             </span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+          variants={fadeIn("down", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+        >
           <Image src={homepage1} alt="homepage1" height={300} width={300} />
-        </div>
+        </motion.div>
       </div>
 
       {/* cards part */}
-      <div className="md:flex md:flex-row grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <motion.div
+        variants={fadeIn("down", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="md:flex md:flex-row grid grid-cols-1 sm:grid-cols-3 gap-3"
+      >
         {navData.map((link, index) => {
           return (
             <Link
               href={link.path}
               key={index}
-              className="w-40 h-36 shadow-md rounded-lg"
+              className="w-40 h-36 shadow-md rounded-lg transition-all hover:-translate-y-6 delay-150 duration-700"
             >
               <div className="flex flex-col items-center w-40 h-36">
                 <div
@@ -91,7 +109,7 @@ export default function Homepage() {
             </Link>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

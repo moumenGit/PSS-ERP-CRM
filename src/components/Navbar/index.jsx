@@ -38,7 +38,7 @@ export default function Navbar() {
     { name: "Home", path: "/", icon: <AiOutlineHome /> },
     {
       name: "Sales",
-      path: "",
+      path: "/sales",
       icon: <MdPointOfSale />,
       dropdownmenu: <SalesMenu dropdownSidebar={dropdownSidebar} />,
       arrow: dropdownSidebar ? <IoMdArrowDropup /> : <IoMdArrowDropdown />,
@@ -74,12 +74,12 @@ export default function Navbar() {
           <div>
             {open ? (
               <AiOutlineClose
-                className="bg-zinc-100 text-3xl cursor-pointer p-1 border-2 rounded-md hover:bg-[#e4e3e0]"
+                className="bg-zinc-100 text-3xl cursor-pointer p-1 border-2 rounded-md hover:bg-[#e4e3e0] duration-500"
                 onClick={() => setOpen(!open)}
               />
             ) : (
               <TfiMenu
-                className="bg-zinc-100 text-3xl cursor-pointer p-1 border-2 rounded-md hover:bg-[#e4e3e0]"
+                className="bg-zinc-100 text-3xl cursor-pointer p-1 border-2 rounded-md hover:bg-[#e4e3e0] duration-500"
                 onClick={() => setOpen(!open)}
               />
             )}
@@ -343,7 +343,7 @@ export default function Navbar() {
 
       {/* -----------------------------------------------sidebar navigation---------------------------------- */}
       <div
-        className={`bg-[#f5f4f2] h-screen pt-4 border absolute duration-300 flex flex-col ${
+        className={`bg-[#f5f4f2] h-screen pt-4 border absolute duration-700 flex flex-col ${
           open ? "w-64 p-3" : "w-0"
         }`}
       >
