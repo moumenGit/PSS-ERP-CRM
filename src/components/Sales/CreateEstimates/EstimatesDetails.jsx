@@ -1,17 +1,15 @@
 import FieldComponent from "@/components/FieldComponent";
 import React from "react";
 
-export default function InvoiceDetails() {
+export default function EstimatesDetails() {
   const invoiceData = [
-    "Invoice Number",
-    "Invoice Date",
-    "Issue Date",
-    "Payment Terms",
+    "Estimate Number",
+    "Estimate Date",
   ];
   return (
     <div className="flex flex-col bg-[#f6f9fc] rounded w-full p-1 md:h-[50%] border border-[#ced4da]">
       <div>
-        <h1 className="font-serif text-xl font-semibold m-2">Invoice Details</h1>
+        <h1 className="font-serif text-xl font-semibold m-2">Estimate Details</h1>
       </div>
       <div className="flex flex-col w-full p-2">
         {invoiceData &&

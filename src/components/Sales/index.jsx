@@ -27,7 +27,7 @@ export default function Sales() {
     },
     {
       name: "Create Estimate",
-      path: "/",
+      path: "//salesPages/estimatesdetails",
       icon: <IoCreateOutline className="w-28 h-28" />,
     },
     {

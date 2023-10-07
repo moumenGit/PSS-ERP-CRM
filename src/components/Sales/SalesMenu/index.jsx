@@ -10,7 +10,7 @@ export default function SalesMenu({ dropdownSidebar }) {
     { name: "Manage Invoices", path: "/salesPages/managesales" },
     { name: "Create Invoice", path: "/salesPages/createdetails" },
     { name: "Manage Estimates", path: "/salesPages/manageestimates" },
-    { name: "Create Estimate", path: "/" },
+    { name: "Create Estimate", path: "/salesPages/estimatesdetails" },
     { name: "Credit Notes", path: "/salesPages/creditnotes" },
     { name: "Refund Receipts", path: "/salesPages/refundreceipts" },
     { name: "Recurring Invoices", path: "/salesPages/recurringinvoices" },

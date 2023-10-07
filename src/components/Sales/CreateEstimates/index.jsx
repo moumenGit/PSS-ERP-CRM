@@ -1,14 +1,14 @@
 import React from "react";
 import ClientDetails from "./ClientDetails";
-import InvoiceDetails from "./InvoiceDetails";
+import EstimatesDetails from "./EstimatesDetails";
 import ItemDetails from "./ItemDetails";
 
-export default function CreateDetails() {
+export default function CreateEstimates() {
   return (
     <div className="flex flex-col p-1 gap-2">
       <div className="grid md:grid-cols-2 gap-2 grid-cols-1">
         <ClientDetails />
-        <InvoiceDetails />
+        <EstimatesDetails />
       </div>
       <div className="">
         <ItemDetails />

@@ -3,7 +3,6 @@ import FieldComponent from "@/components/FieldComponent";
 import Selectcomponent from "@/components/Selectcomponent";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import PopupForm from "./PopupForm";
 
 export default function ClientDetails() {
   // for radio input
@@ -37,16 +36,6 @@ export default function ClientDetails() {
       });
   }, []);
 
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const openPopup = () => {
-    setIsPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
-
   return (
     <div>
       <div className="flex flex-col bg-[#f6f9fc] rounded w-full p-1 border border-[#ced4da]">
@@ -54,16 +43,7 @@ export default function ClientDetails() {
           <h1 className="font-serif text-xl font-semibold m-2">
             Client Details
           </h1>
-          <button
-            onClick={openPopup}
-            className="m-1 text-blue-500 font-medium underline"
-          >
-            Advanced
-          </button>
-          {/* <Link href={"/"} >
-            
-          </Link> */}
-          <PopupForm isOpen={isPopupOpen} onClose={closePopup} />
+          <Link href={"/"} className="m-1 text-blue-500 font-medium underline">Advanced</Link>
         </div>
 
         {/* --------------client type using radio----------------- */}
