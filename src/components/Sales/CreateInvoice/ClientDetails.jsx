@@ -1,7 +1,6 @@
 import ButtonComponent from "@/components/ButtonComponent/ButtonComponent";
 import FieldComponent from "@/components/FieldComponent";
 import Selectcomponent from "@/components/Selectcomponent";
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import PopupForm from "./PopupForm";
 
@@ -37,6 +36,7 @@ export default function ClientDetails() {
       });
   }, []);
 
+  // to open and close advance option
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const openPopup = () => {
@@ -48,7 +48,7 @@ export default function ClientDetails() {
   };
 
   return (
-    <div>
+    <div className={`${isPopupOpen ? "" : ""}`}>
       <div className="flex flex-col bg-[#f6f9fc] rounded w-full p-1 border border-[#ced4da]">
         <div className="flex flex-row justify-between">
           <h1 className="font-serif text-xl font-semibold m-2">
@@ -60,9 +60,6 @@ export default function ClientDetails() {
           >
             Advanced
           </button>
-          {/* <Link href={"/"} >
-            
-          </Link> */}
           <PopupForm isOpen={isPopupOpen} onClose={closePopup} />
         </div>
 

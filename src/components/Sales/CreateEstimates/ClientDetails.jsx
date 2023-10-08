@@ -3,6 +3,7 @@ import FieldComponent from "@/components/FieldComponent";
 import Selectcomponent from "@/components/Selectcomponent";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import PopupForm from "../CreateInvoice/PopupForm";
 
 export default function ClientDetails() {
   // for radio input
@@ -36,6 +37,17 @@ export default function ClientDetails() {
       });
   }, []);
 
+  // to open and close advance option
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   return (
     <div>
       <div className="flex flex-col bg-[#f6f9fc] rounded w-full p-1 border border-[#ced4da]">
@@ -43,7 +55,13 @@ export default function ClientDetails() {
           <h1 className="font-serif text-xl font-semibold m-2">
             Client Details
           </h1>
-          <Link href={"/"} className="m-1 text-blue-500 font-medium underline">Advanced</Link>
+          <button
+            onClick={openPopup}
+            className="m-1 text-blue-500 font-medium underline"
+          >
+            Advanced
+          </button>
+          <PopupForm isOpen={isPopupOpen} onClose={closePopup} />{" "}
         </div>
 
         {/* --------------client type using radio----------------- */}
