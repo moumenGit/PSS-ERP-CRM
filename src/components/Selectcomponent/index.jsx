@@ -7,11 +7,12 @@ export default function Selectcomponent({
   classNameLabel="",
   classNameDiv="",
   firstOption="",
+  width="w-full"
 }) {
   return (
-    <div className={`flex flex-col w-full ${classNameDiv}`}>
+    <div className={`flex flex-col ${width} ${classNameDiv}`}>
       <label className={classNameLabel}>{name}</label>
-      <select className={classNameStyle} name="">
+      <select className={classNameStyle}>
         {firstOption}
         {values &&
           values.map((value) => {

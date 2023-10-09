@@ -2,7 +2,7 @@ import ButtonComponent from "@/components/ButtonComponent/ButtonComponent";
 import FieldComponent from "@/components/FieldComponent";
 import Selectcomponent from "@/components/Selectcomponent";
 import React, { useState, useEffect } from "react";
-import PopupForm from "./PopupForm";
+import PopupForm from "../PopupForm";
 
 export default function ClientDetails() {
   // for radio input

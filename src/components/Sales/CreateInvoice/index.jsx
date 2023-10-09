@@ -1,7 +1,8 @@
 import React from "react";
-import ClientDetails from "./ClientDetails";
+import ClientDetails from "../EstimatesAndInvoiceCom/ClientDetails";
 import InvoiceDetails from "./InvoiceDetails";
-import ItemDetails from "./ItemDetails";
+import ItemDetails from "../EstimatesAndInvoiceCom/ItemDetails";
+import PaymentDetails from "../EstimatesAndInvoiceCom/PaymentDetails";
 
 export default function CreateDetails() {
   return (
@@ -10,9 +11,8 @@ export default function CreateDetails() {
         <ClientDetails />
         <InvoiceDetails />
       </div>
-      <div className="">
         <ItemDetails />
-      </div>
+        <PaymentDetails />
     </div>
   );
 }
