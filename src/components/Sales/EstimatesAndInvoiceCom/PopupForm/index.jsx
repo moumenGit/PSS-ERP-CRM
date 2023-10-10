@@ -328,7 +328,7 @@ const PopupForm = ({ isOpen, onClose }) => {
             {/* -------------------------------display language--------------------------- */}
             <Selectcomponent
               values={["Display Languagee", "Arabic", "English"]}
-              name="Payment Status"
+              name="Display Language"
               classNameStyle="border border-[#ced4da] p-1"
               classNameLabel="text-[#437c94] font-medium"
             />
